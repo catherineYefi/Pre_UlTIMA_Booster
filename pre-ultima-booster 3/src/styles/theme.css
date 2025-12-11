@@ -1,0 +1,103 @@
+/* ============================================
+   PRE-ULTIMA BOOSTER — Theme Variables
+   Ночной Сочи: фиолетовый → синий → бирюзовый
+   ============================================ */
+
+:root {
+  /* Dark Theme (Default) — Ночной Сочи */
+  --bg: #050816;
+  --bg-elevated: #0b1020;
+  --bg-card: rgba(15, 23, 42, 0.6);
+  
+  --accent: #a855f7;        /* Фиолетовый */
+  --accent-soft: #22d3ee;   /* Бирюзовый */
+  --accent-hover: #9333ea;  /* Темнее фиолетовый */
+  
+  --text: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --muted: #94a3b8;
+  
+  --border-subtle: rgba(148, 163, 184, 0.2);
+  --border-accent: rgba(168, 85, 247, 0.3);
+  
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%);
+  --gradient-bg: linear-gradient(135deg, #050816 0%, #0b1020 50%, #0f172a 100%);
+  --gradient-card: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%);
+}
+
+:root.theme-light {
+  /* Light Theme — Дневной Сочи */
+  --bg: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  
+  --accent: #7c3aed;
+  --accent-soft: #0891b2;
+  --accent-hover: #6d28d9;
+  
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --muted: #64748b;
+  
+  --border-subtle: rgba(100, 116, 139, 0.2);
+  --border-accent: rgba(124, 58, 237, 0.3);
+  
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+  
+  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #0891b2 100%);
+  --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+}
+
+/* ============================================
+   Transition для плавной смены тем
+   ============================================ */
+
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Исключения для анимаций и трансформаций */
+*:where(:not(.no-transition)) {
+  transition-property: background-color, border-color, color;
+}
+
+/* ============================================
+   Премиум эффекты
+   ============================================ */
+
+.premium-glow {
+  box-shadow: 
+    0 0 30px rgba(168, 85, 247, 0.15),
+    0 0 60px rgba(34, 211, 238, 0.1);
+}
+
+:root.theme-light .premium-glow {
+  box-shadow: 
+    0 4px 20px rgba(124, 58, 237, 0.1),
+    0 8px 40px rgba(8, 145, 178, 0.05);
+}
+
+.glass-effect {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.mesh-gradient {
+  background: 
+    radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(34, 211, 238, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(34, 211, 238, 0.2) 0px, transparent 50%);
+}
